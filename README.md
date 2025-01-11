@@ -38,9 +38,13 @@ El proyecto está configurado para funcionar con cualquier base de datos relacio
 ### Variables de Entorno
 Las credenciales de conexión deben configurarse mediante variables de entorno:
 
-- SUPABASE_URL=tu_url_de_base_de_datos
+- SUPABASE_HOST=tu_host_de_base_de_datos
+- SUPABASE_PORT=tu_puerto_de_base_de_datos
+- SUPABASE_DB=tu_nombre_de_base_de_datos
 - SUPABASE_USERNAME=tu_usuario
 - SUPABASE_PASSWORD=tu_contraseña
+
+Estas podran configurarse en las variables de entorno del sistema, o en un archivo .env alojado en la carpeta raiz del proyecto (donde se encuentra pom.xml)
 
 ### Pasos de Instalación
 1. Clonar el repositorio
@@ -52,15 +56,18 @@ git clone https://github.com/Kdna-dev/sistema-de-adopcion.git
 ```
 cd sistema-de-adopcion
 ```
+#### Si tienes instalado maven en el sistema, utiliza el siguiente comando para compilar y ejecutar el proyecto
 
-3. Compilar el proyecto
-```
-mvn clean install
-```
-
-4. Ejecutar la aplicación
+3. Ejecutar la aplicación
 ```
 mvn spring-boot:run
+```
+
+#### Si NO tienes instalado maven en el sistema, puedes utilizar el maven wrapper que provee spring boot
+
+3. Ejecutar la aplicación
+```
+./mvnw spring-boot:run
 ```
 
 ## 📚 Documentación API

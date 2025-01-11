@@ -23,14 +23,10 @@ public class LoggingServiceAspect {
         String methodName = joinPoint.getSignature().getName();
         String className = joinPoint.getTarget().getClass().getSimpleName();
 
-        logger.info(String.format(
-            "BEGIN: Controller [%s] Method [%s] with arguments:",
-            className,
-            methodName
-        ));
+        logger.info("BEGIN: Controller [{}] Method [{}] with arguments:",
+            className, 
+            methodName);
         Arrays.stream(joinPoint.getArgs()).forEach(arg -> logger.info(arg.toString()));
-
-        //logger.info(String.format("", Arrays.toString(joinPoint.getArgs())));
     }
 
     @AfterReturning(
@@ -41,11 +37,10 @@ public class LoggingServiceAspect {
         String methodName = joinPoint.getSignature().getName();
         String className = joinPoint.getTarget().getClass().getSimpleName();
 
-        logger.info(String.format(
-            "END: Controller [%s] Method [%s] returned: %s",
+        logger.info("END: Controller [{}] Method [{}] returned: {}",
             className,
             methodName,
             result
-        ));
+        );
     }
 }
