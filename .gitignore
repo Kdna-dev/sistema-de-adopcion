@@ -36,4 +36,8 @@ build/
 ### VS Code ###
 .vscode/
 
+### Variables de entorno ###
 .env
+
+### Documentacion ###
+doc.md

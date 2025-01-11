@@ -141,7 +141,7 @@ public class MascotaController {
     })
     @DeleteMapping("/{id}")
     @PreAuthorize("hasAnyRole('DOCTOR', 'ADMIN')")
-    public ResponseEntity<Void> deleteById(@PathVariable Long id) {
+    public ResponseEntity<Void> delete(@PathVariable Long id) {
         mascotaService.deleteById(id);
         return ResponseEntity.noContent().build();
     }
